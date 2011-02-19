@@ -42,6 +42,7 @@
             <string>include/freetype/internal/*.h</string>
             <string>include/freetype/internal/services/.h</string>
             <string>LICENSES/freetype.txt</string>
+            <string>include/ft2build.h</string>
           </array>
           <key>name</key>
           <string>common</string>
