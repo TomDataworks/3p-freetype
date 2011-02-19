@@ -1,0 +1,70 @@
+<?xml version="1.0" ?>
+<llsd>
+<map>
+    <key>package_description</key>
+    <map>
+      <key>copyright</key>
+      <string>Copyright 1996-2002, 2006 by David Turner, Robert Wilhelm, and Werner Lemberg</string>
+      <key>description</key>
+      <string>Font rendering library</string>
+      <key>license</key>
+      <string>FreeType</string>
+      <key>license_file</key>
+      <string>LICENSES/freetype.txt</string>
+      <key>name</key>
+      <string>FreeType</string>
+      <key>platforms</key>
+      <map>
+        <key>common</key>
+        <map>
+          <key>configurations</key>
+          <map>
+            <key>default</key>
+            <map>
+              <key>build</key>
+              <map>
+                <key>command</key>
+                <string>bash</string>
+                <key>options</key>
+                <array>
+                  <string>-c</string>
+                  <string>../build-cmd.sh</string>
+                </array>
+              </map>
+              <key>name</key>
+              <string>default</string>
+            </map>
+          </map>
+          <key>name</key>
+          <string>common</string>
+        </map>
+        <key>windows</key>
+        <map>
+          <key>build_directory</key>
+          <string>stage</string>
+          <key>configurations</key>
+          <map>
+            <key>default</key>
+            <map>
+              <key>build</key>
+              <map>
+              </map>
+              <key>default</key>
+              <string>true</string>
+              <key>name</key>
+              <string>default</string>
+            </map>
+          </map>
+          <key>name</key>
+          <string>windows</string>
+        </map>
+      </map>
+      <key>version</key>
+      <string>2.4.4</string>
+    </map>
+    <key>type</key>
+    <string>autobuild</string>
+    <key>version</key>
+    <string>1.2</string>
+  </map>
+</llsd>
