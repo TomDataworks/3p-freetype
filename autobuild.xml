@@ -12,7 +12,7 @@
       <key>license_file</key>
       <string>LICENSES/freetype.txt</string>
       <key>name</key>
-      <string>FreeType</string>
+      <string>freetype</string>
       <key>platforms</key>
       <map>
         <key>common</key>
