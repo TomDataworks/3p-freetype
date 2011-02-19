@@ -35,6 +35,14 @@
               <string>default</string>
             </map>
           </map>
+          <key>manifest</key>
+          <array>
+            <string>include/freetype/*.h</string>
+            <string>include/freetype/config/*.h</string>
+            <string>include/freetype/internal/*.h</string>
+            <string>include/freetype/internal/services/.h</string>
+            <string>LICENSES/freetype.txt</string>
+          </array>
           <key>name</key>
           <string>common</string>
         </map>
@@ -55,6 +63,11 @@
               <string>default</string>
             </map>
           </map>
+          <key>manifest</key>
+          <array>
+            <string>lib/debug/freetype.lib</string>
+            <string>lib/release/freetype.lib</string>
+          </array>
           <key>name</key>
           <string>windows</string>
         </map>
