@@ -17,6 +17,8 @@
       <map>
         <key>common</key>
         <map>
+          <key>build_directory</key>
+          <string>stage</string>
           <key>configurations</key>
           <map>
             <key>default</key>
@@ -47,10 +49,49 @@
           <key>name</key>
           <string>common</string>
         </map>
+        <key>darwin</key>
+        <map>
+          <key>configurations</key>
+          <map>
+            <key>default</key>
+            <map>
+              <key>build</key>
+              <map>
+              </map>
+              <key>default</key>
+              <string>true</string>
+              <key>name</key>
+              <string>default</string>
+            </map>
+          </map>
+          <key>manifest</key>
+          <array>
+            <string>lib/release/*.dylib</string>
+            <string>lib/release/*.a</string>
+          </array>
+          <key>name</key>
+          <string>darwin</string>
+        </map>
+        <key>linux</key>
+        <map>
+          <key>configurations</key>
+          <map>
+            <key>default</key>
+            <map>
+              <key>build</key>
+              <map>
+              </map>
+              <key>default</key>
+              <string>true</string>
+              <key>name</key>
+              <string>default</string>
+            </map>
+          </map>
+          <key>name</key>
+          <string>linux</string>
+        </map>
         <key>windows</key>
         <map>
-          <key>build_directory</key>
-          <string>stage</string>
           <key>configurations</key>
           <map>
             <key>default</key>

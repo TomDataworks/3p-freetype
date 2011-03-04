@@ -44,15 +44,19 @@ pushd "$FREETYPELIB_SOURCE_DIR"
             ./configure --prefix="$stage"
             make
             make install
-			mkdir -p "$stage/include/freetype"
-			mv "$stage/include/"*.h "$stage/include/freetype/"
+            mv "$stage/include/freetype2/freetype" "$stage/include/freetype"
+            mv "$stage/lib" "$stage/release"
+            mkdir -p "$stage/lib"
+            mv "$stage/release" "$stage/lib"
         ;;
         "linux")
             CFLAGS="-m32" CXXFLAGS="-m32" ./configure --prefix="$stage"
             make
             make install
-			mkdir -p "$stage/include/freetype"
-			mv "$stage/include/"*.h "$stage/include/freetype/"
+            mv "$stage/include/freetype2/freetype" "$stage/include/freetype"
+            mv "$stage/lib" "$stage/release"
+            mkdir -p "$stage/lib"
+            mv "$stage/release" "$stage/lib"
         ;;
     esac
     mkdir -p "$stage/LICENSES"
