@@ -7,7 +7,8 @@ set -x
 # make errors fatal
 set -e
 
-FREETYPELIB_SOURCE_DIR=""
+FREETYPE_VERSION="2.4.4"
+FREETYPELIB_SOURCE_DIR="freetype-$FREETYPE_VERSION"
 
 if [ -z "$AUTOBUILD" ] ; then 
     fail
