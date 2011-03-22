@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug Multithreaded|Win32">
@@ -127,7 +127,7 @@
       <Culture>0x0409</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>..\..\..\objs\win32\vc2010\freetype244.lib</OutputFile>
+      <OutputFile>..\..\..\objs\win32\vc2010\freetype239.lib</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
   </ItemDefinitionGroup>
@@ -155,7 +155,7 @@
       <Culture>0x0409</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>..\..\..\objs\win32\vc2010\freetype244MT.lib</OutputFile>
+      <OutputFile>..\..\..\objs\win32\vc2008\freetype239MT.lib</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
   </ItemDefinitionGroup>
@@ -183,7 +183,7 @@
       <Culture>0x0409</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>..\..\..\objs\win32\vc2010\freetype244ST.lib</OutputFile>
+      <OutputFile>..\..\..\objs\win32\vc2008\freetype239ST.lib</OutputFile>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -207,7 +207,7 @@
       <Culture>0x0409</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>..\..\..\objs\win32\vc2010\freetype244_D.lib</OutputFile>
+      <OutputFile>..\..\..\objs\win32\vc2010\freetype239_D.lib</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
   </ItemDefinitionGroup>
@@ -232,7 +232,7 @@
       <Culture>0x0409</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>..\..\..\objs\win32\vc2010\freetype244ST_D.lib</OutputFile>
+      <OutputFile>..\..\..\objs\win32\vc2008\freetype239ST_D.lib</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
   </ItemDefinitionGroup>
@@ -259,7 +259,7 @@
       <Culture>0x0409</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>..\..\..\objs\win32\vc2010\freetype244MT_D.lib</OutputFile>
+      <OutputFile>..\..\..\objs\win32\vc2008\freetype239MT_D.lib</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
   </ItemDefinitionGroup>
@@ -556,11 +556,6 @@
     <ClCompile Include="..\..\..\src\base\ftsynth.c" />
     <ClCompile Include="..\..\..\src\base\fttype1.c" />
     <ClCompile Include="..\..\..\src\base\ftwinfnt.c" />
-    <ClCompile Include="..\..\..\src\base\ftxf86.c" />
-    <ClCompile Include="..\..\..\src\base\ftlcdfil.c" />
-    <ClCompile Include="..\..\..\src\base\ftgxval.c" />
-    <ClCompile Include="..\..\..\src\base\ftotval.c" />
-    <ClCompile Include="..\..\..\src\base\ftpatent.c" />
     <ClCompile Include="..\..\..\src\pcf\pcf.c">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug Multithreaded|Win32'">Disabled</Optimization>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug Multithreaded|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>

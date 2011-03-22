@@ -34,8 +34,8 @@ pushd "$FREETYPELIB_SOURCE_DIR"
 
             mkdir -p "$stage/lib/debug"
             mkdir -p "$stage/lib/release"
-            cp "objs/win32/vc2010/freetype244_D.lib" "$stage/lib/debug/freetype.lib"
-            cp "objs/win32/vc2010/freetype244.lib" "$stage/lib/release/freetype.lib"
+            cp "objs/win32/vc2010/freetype239_D.lib" "$stage/lib/debug/freetype.lib"
+            cp "objs/win32/vc2010/freetype239.lib" "$stage/lib/release/freetype.lib"
                 
             mkdir -p "$stage/include/freetype"
             cp -r include/ft2build.h "$stage/include/ft2build.h"
