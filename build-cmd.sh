@@ -51,7 +51,7 @@ pushd "$FREETYPELIB_SOURCE_DIR"
             mv "$stage/release" "$stage/lib"
         ;;
         "linux")
-            CFLAGS="-m32" CXXFLAGS="-m32" ./configure --prefix="$stage"
+            LDFLAGS="-m32" CFLAGS="-m32" CXXFLAGS="-m32" ./configure --prefix="$stage"
             make
             make install
             mv "$stage/include/freetype2/freetype" "$stage/include/freetype"
