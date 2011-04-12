@@ -86,6 +86,10 @@
               <string>default</string>
             </map>
           </map>
+          <key>manifest</key>
+          <array>
+            <string>lib/release/libfreetype.a</string>
+          </array>
           <key>name</key>
           <string>linux</string>
         </map>
