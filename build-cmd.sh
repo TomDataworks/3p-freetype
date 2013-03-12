@@ -2,13 +2,26 @@
 
 cd "$(dirname "$0")"
 
+# Load autobuild provided shell functions and variables
+set +x
+eval "$("$AUTOBUILD" source_environment)"
+set -x
+
 # turn on verbose debugging output for parabuild logs.
 set -x
 # make errors fatal
 set -e
 
-FREETYPE_VERSION="2.3.9"
+FREETYPE_VERSION="2.4.4"
 FREETYPELIB_SOURCE_DIR="freetype-$FREETYPE_VERSION"
+FREETYPE_ARCHIVE="$FREETYPELIB_SOURCE_DIR.tar.bz2"
+FREETYPE_URL="http://download.savannah.gnu.org/releases/freetype/$FREETYPE_ARCHIVE"
+FREETYPE_MD5="b3e2b6e2f1c3e0dffa1fd2a0f848b671"
+
+# Fetch and extract the official freetype release source code
+#
+fetch_archive "$FREETYPE_URL" "$FREETYPE_ARCHIVE" "$FREETYPE_MD5"
+extract "$FREETYPE_ARCHIVE"
 
 if [ -z "$AUTOBUILD" ] ; then 
     fail
@@ -42,7 +55,7 @@ pushd "$FREETYPELIB_SOURCE_DIR"
             cp -r include/freetype/* "$stage/include/freetype/"            
         ;;
         "darwin")
-            CPPFLAGS="-arch i386 -iwithsysroot /Developer/SDKs/MacOSX10.5.sdk" ./configure --prefix="$stage"
+            CPPFLAGS="-arch i386 -iwithsysroot /Developer/SDKs/MacOSX10.8.sdk" ./configure --prefix="$stage"
             make
             make install
             mv "$stage/include/freetype2/freetype" "$stage/include/freetype"
