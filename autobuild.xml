@@ -1,10 +1,61 @@
 <?xml version="1.0" ?>
 <llsd>
 <map>
+    <key>installables</key>
+    <map>
+      <key>zlib</key>
+      <map>
+        <key>license</key>
+        <string>zlib</string>
+        <key>license_file</key>
+        <string>LICENSES/zlib.txt</string>
+        <key>name</key>
+        <string>zlib</string>
+        <key>platforms</key>
+        <map>
+          <key>darwin</key>
+          <map>
+            <key>archive</key>
+            <map>
+              <key>hash</key>
+              <string>44f898ad513cc40ace8609073a594fa5</string>
+              <key>url</key>
+              <string>http://automated-builds-secondlife-com.s3.amazonaws.com/hg/repo/3pl_3p-zlib-update/rev/290080/arch/Darwin/installer/zlib-1.2.8-darwin-20140515.tar.bz2</string>
+            </map>
+            <key>name</key>
+            <string>darwin</string>
+          </map>
+          <key>linux</key>
+          <map>
+            <key>archive</key>
+            <map>
+              <key>hash</key>
+              <string>8db178c604df50682d85bb8a78065903</string>
+              <key>url</key>
+              <string>http://automated-builds-secondlife-com.s3.amazonaws.com/hg/repo/3pl_3p-zlib-update/rev/290080/arch/Linux/installer/zlib-1.2.8-linux-20140515.tar.bz2</string>
+            </map>
+            <key>name</key>
+            <string>linux</string>
+          </map>
+          <key>windows</key>
+          <map>
+            <key>archive</key>
+            <map>
+              <key>hash</key>
+              <string>99157bfc04655ca870d4c5ddd4358f34</string>
+              <key>url</key>
+              <string>http://automated-builds-secondlife-com.s3.amazonaws.com/hg/repo/3pl_3p-zlib-update/rev/290080/arch/CYGWIN/installer/zlib-1.2.8-windows-20140515.tar.bz2</string>
+            </map>
+            <key>name</key>
+            <string>windows</string>
+          </map>
+        </map>
+      </map>
+    </map>
     <key>package_description</key>
     <map>
       <key>copyright</key>
-      <string>Copyright 1996-2002, 2006 by David Turner, Robert Wilhelm, and Werner Lemberg</string>
+      <string>Copyright 2006, 2007, 2008, 2009, 2010 by David Turner, Robert Wilhelm, and Werner Lemberg.</string>
       <key>description</key>
       <string>Font rendering library</string>
       <key>license</key>
@@ -39,12 +90,10 @@
           </map>
           <key>manifest</key>
           <array>
-            <string>include/freetype/*.h</string>
-            <string>include/freetype/config/*.h</string>
-            <string>include/freetype/internal/*.h</string>
-            <string>include/freetype/internal/services/.h</string>
-            <string>LICENSES/freetype.txt</string>
             <string>include/ft2build.h</string>
+            <string>include/freetype2/*</string>
+            <string>LICENSES/freetype.txt</string>
+            <string>docs/freetype/README.Linden</string>
           </array>
           <key>name</key>
           <string>common</string>
@@ -66,7 +115,10 @@
           </map>
           <key>manifest</key>
           <array>
-            <string>lib/release/*</string>
+            <string>lib/debug/lib*.a</string>
+            <string>lib/debug/lib*.dylib</string>
+            <string>lib/release/lib*.a</string>
+            <string>lib/release/lib*.dylib</string>
           </array>
           <key>name</key>
           <string>darwin</string>
@@ -88,7 +140,10 @@
           </map>
           <key>manifest</key>
           <array>
-            <string>lib/release/*</string>
+            <string>lib/debug/lib*.a</string>
+            <string>lib/debug/lib*.so*</string>
+            <string>lib/release/lib*.a</string>
+            <string>lib/release/lib*.so*</string>
           </array>
           <key>name</key>
           <string>linux</string>
@@ -118,7 +173,7 @@
         </map>
       </map>
       <key>version</key>
-      <string>2.3.9</string>
+      <string>2.4.4</string>
     </map>
     <key>type</key>
     <string>autobuild</string>
