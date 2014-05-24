@@ -110,7 +110,11 @@
 
 2.  Modifications
 
-    Windows project file changes to use a packaged zlib build.
+    Windows project file changes to use a packaged zlib build.  Well,
+    there *is* a zlib embedded in the resulting libraries and they've
+    done some hacking to make it work.  Look at gzip/ftgzip.c to see
+    what has been done to prevent interactions between their private
+    gzip and a potential 'real usage' in an application.
 
     On Linux, we either accidentally or intentionally ship without a
     full contingent of library symlinks.  The result is that the
@@ -141,8 +145,11 @@
     * include/ft2build.h
     * include/freetype2/freetype/*.h
     * include/freetype2/freetype/config/*.h
+    * include/freetype2/freetype/internal/*.h (some platforms)
 
     Windows:
+    * lib/debug/freetype.lib
+    * lib/release/freetype.lib
 
     Mac:
     * lib/debug/libfreetype.a
