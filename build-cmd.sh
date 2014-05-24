@@ -23,6 +23,7 @@ set +x
 eval "$("$AUTOBUILD" source_environment)"
 set -x
 
+top="$(pwd)"
 stage="$(pwd)/stage"
 
 [ -f "$stage"/packages/include/zlib/zlib.h ] || fail "You haven't installed packages yet."
@@ -70,7 +71,7 @@ pushd "$FREETYPELIB_SOURCE_DIR"
             CFLAGS="$opts -gdwarf-2 -O0" \
                 CXXFLAGS="$opts -gdwarf-2 -O0" \
                 CPPFLAGS="-I$stage/packages/include/zlib" \
-                LDFLAGS="$opts -Wl,-headerpad_max_install_names -L$stage/packages/lib/debug -Wl,--exclude-libs,libz" \
+                LDFLAGS="$opts -Wl,-headerpad_max_install_names -L$stage/packages/lib/debug -Wl,-unexported_symbols_list,$top/libz_a_debug_unexported.txt" \
                 ./configure --with-pic \
                 --prefix="$stage" --libdir="$stage"/lib/debug/
             make
@@ -79,7 +80,7 @@ pushd "$FREETYPELIB_SOURCE_DIR"
             # conditionally run unit tests
             if [ "${DISABLE_UNIT_TESTS:-0}" = "0" ]; then
                 # make test
-				echo "No tests"
+                echo "No tests"
             fi
 
             # install_name_tool -id "@executable_path/../Resources/libfreetype.dylib" "$stage"/lib/debug/libfreetype.dylib
@@ -90,7 +91,7 @@ pushd "$FREETYPELIB_SOURCE_DIR"
             CFLAGS="$opts -gdwarf-2 -O2" \
                 CXXFLAGS="$opts -gdwarf-2 -O2" \
                 CPPFLAGS="-I$stage/packages/include/zlib" \
-                LDFLAGS="$opts -Wl,-headerpad_max_install_names -L$stage/packages/lib/release -Wl,--exclude-libs,libz" \
+                LDFLAGS="$opts -Wl,-headerpad_max_install_names -L$stage/packages/lib/release -Wl,-unexported_symbols_list,$top/libz_a_release_unexported.txt" \
                 ./configure --with-pic \
                 --prefix="$stage" --libdir="$stage"/lib/release/
             make
@@ -99,7 +100,7 @@ pushd "$FREETYPELIB_SOURCE_DIR"
             # conditionally run unit tests
             if [ "${DISABLE_UNIT_TESTS:-0}" = "0" ]; then
                 # make test
-				echo "No tests"
+                echo "No tests"
             fi
 
             # install_name_tool -id "@executable_path/../Resources/libfreetype.dylib" "$stage"/lib/release/libfreetype.dylib
@@ -154,7 +155,7 @@ pushd "$FREETYPELIB_SOURCE_DIR"
             # conditionally run unit tests
             if [ "${DISABLE_UNIT_TESTS:-0}" = "0" ]; then
                 # make test
-				echo "No tests"
+                echo "No tests"
             fi
 
             make distclean
@@ -172,7 +173,7 @@ pushd "$FREETYPELIB_SOURCE_DIR"
             # conditionally run unit tests
             if [ "${DISABLE_UNIT_TESTS:-0}" = "0" ]; then
                 # make test
-				echo "No tests"
+                echo "No tests"
             fi
 
             make distclean

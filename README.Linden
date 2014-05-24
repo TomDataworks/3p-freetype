@@ -23,8 +23,8 @@
          checking zlib.h presence... yes
          checking for zlib.h... yes
 
-    [ ]  Check the library dependencies and symbol exports on 
-         the built .sos:
+    [ ]  Check the library dependencies and version strings the built
+         .sos:
 
          $ strings libfreetype.* | grep 1\\.[0-9]\\.
          1.2.8
@@ -64,6 +64,32 @@
          00066440 t inflate_fast
          000651c0 t inflate_table
 
+         On Mac, we use hand-constructed symbol lists to remove the
+         zlib symbols from the build .dylibs.  So be particularly
+         thorough and compare *every* symbol exported by libz.a
+         against what these .dylibs are exporting.
+
+         $ nm stage/lib/release/libfreetype.dylib | grep flate
+         0005bb60 t _inflate
+         0005b780 t _inflateCopy
+         0005b3c0 t _inflateEnd
+         0005ba30 t _inflateGetDictionary
+         0005b420 t _inflateGetHeader
+         0005b1c0 t _inflateInit2_
+         0005b290 t _inflateInit_
+         0005b730 t _inflateMark
+         0005b360 t _inflatePrime
+         0005afc0 t _inflateReset
+         0005b080 t _inflateReset2
+         0005af20 t _inflateResetKeep
+         0005bab0 t _inflateSetDictionary
+         0005b450 t _inflateSync
+         0005b6d0 t _inflateSyncPoint
+         0005b700 t _inflateUndermine
+         0005ed10 s _inflate_copyright
+         0005a860 t _inflate_fast
+         0005d670 t _inflate_table
+
 
 1.  Introduction
 
@@ -94,6 +120,13 @@
     off as a result.  We might want to either make this thing work
     well or get rid of it entirely and let the host provide it.
 
+    On Mac, we need to keep archive symbols from libz.a out of the
+    built dylibs but we don't have a convenient link argument to
+    implement it.  So two symbol list files were manually created from
+    the debug and release libz.a files and these are handed off to the
+    -unexported_symbols_list option to the linker.  If libz changes,
+    these files, in the top directory, need to be re-examined.
+
 
 3.  Source Origin
 
@@ -112,6 +145,12 @@
     Windows:
 
     Mac:
+    * lib/debug/libfreetype.a
+    * lib/debug/libfreetype.6.dylib
+    * lib/debug/libfreetype.dylib
+    * lib/release/libfreetype.a
+    * lib/release/libfreetype.6.dylib
+    * lib/release/libfreetype.dylib
 
     Linux:
     * lib/debug/libfreetype.a
