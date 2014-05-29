@@ -116,13 +116,16 @@
     what has been done to prevent interactions between their private
     gzip and a potential 'real usage' in an application.
 
-    On Linux, we either accidentally or intentionally ship without a
-    full contingent of library symlinks.  The result is that the
-    viewer doesn't run with these shared libraries.  We build with
-    them then revert (or upgrade) to system-provided libraries.
-    Accident or carelessness, VWR-28748 suggests that users are better
-    off as a result.  We might want to either make this thing work
-    well or get rid of it entirely and let the host provide it.
+    On Linux, we either accidentally or intentionally ship without the
+    freetype library at all.  The result is that the viewer doesn't
+    run with these shared libraries.  We build with them then revert
+    (or upgrade) to system-provided libraries.  Accident or
+    carelessness, VWR-28748 suggests that users are better off as a
+    result.  We might want to either make this thing work well or get
+    rid of it entirely and let the host provide it.  For now, we'll
+    'upgrade' to what fontconfig is doing: fully-qualified .so shipped
+    but the symlinks missing so that the system libraries are used by
+    default.
 
     On Mac, we need to keep archive symbols from libz.a out of the
     built dylibs but we don't have a convenient link argument to
@@ -130,6 +133,10 @@
     the debug and release libz.a files and these are handed off to the
     -unexported_symbols_list option to the linker.  If libz changes,
     these files, in the top directory, need to be re-examined.
+
+    The above is mostly an exercise in how to do this on Mac.  We'll
+    use static libraries for now.  Easier packaging and that's the
+    general direction we've been heading.
 
 
 3.  Source Origin
@@ -153,11 +160,7 @@
 
     Mac:
     * lib/debug/libfreetype.a
-    * lib/debug/libfreetype.6.dylib
-    * lib/debug/libfreetype.dylib
     * lib/release/libfreetype.a
-    * lib/release/libfreetype.6.dylib
-    * lib/release/libfreetype.dylib
 
     Linux:
     * lib/debug/libfreetype.a

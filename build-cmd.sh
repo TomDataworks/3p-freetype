@@ -83,7 +83,7 @@ pushd "$FREETYPELIB_SOURCE_DIR"
                 echo "No tests"
             fi
 
-            # install_name_tool -id "@executable_path/../Resources/libfreetype.dylib" "$stage"/lib/debug/libfreetype.dylib
+            install_name_tool -id "@executable_path/../Resources/libfreetype.6.dylib" "$stage"/lib/debug/libfreetype.6.dylib
 
             make distclean
 
@@ -103,7 +103,7 @@ pushd "$FREETYPELIB_SOURCE_DIR"
                 echo "No tests"
             fi
 
-            # install_name_tool -id "@executable_path/../Resources/libfreetype.dylib" "$stage"/lib/release/libfreetype.dylib
+            install_name_tool -id "@executable_path/../Resources/libfreetype.6.dylib" "$stage"/lib/release/libfreetype.6.dylib
 
             make distclean
         ;;

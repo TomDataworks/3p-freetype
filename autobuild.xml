@@ -116,9 +116,7 @@
           <key>manifest</key>
           <array>
             <string>lib/debug/lib*.a</string>
-            <string>lib/debug/lib*.dylib</string>
             <string>lib/release/lib*.a</string>
-            <string>lib/release/lib*.dylib</string>
           </array>
           <key>name</key>
           <string>darwin</string>
