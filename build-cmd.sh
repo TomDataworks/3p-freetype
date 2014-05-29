@@ -71,7 +71,7 @@ pushd "$FREETYPELIB_SOURCE_DIR"
             CFLAGS="$opts -gdwarf-2 -O0" \
                 CXXFLAGS="$opts -gdwarf-2 -O0" \
                 CPPFLAGS="-I$stage/packages/include/zlib" \
-                LDFLAGS="$opts -Wl,-headerpad_max_install_names -L$stage/packages/lib/debug -Wl,-unexported_symbols_list,$top/libz_a_debug_unexported.txt" \
+                LDFLAGS="$opts -Wl,-headerpad_max_install_names -L$stage/packages/lib/debug -Wl,-unexported_symbols_list,$stage/packages/lib/debug/libz_darwin.exp" \
                 ./configure --with-pic \
                 --prefix="$stage" --libdir="$stage"/lib/debug/
             make
@@ -91,7 +91,7 @@ pushd "$FREETYPELIB_SOURCE_DIR"
             CFLAGS="$opts -gdwarf-2 -O2" \
                 CXXFLAGS="$opts -gdwarf-2 -O2" \
                 CPPFLAGS="-I$stage/packages/include/zlib" \
-                LDFLAGS="$opts -Wl,-headerpad_max_install_names -L$stage/packages/lib/release -Wl,-unexported_symbols_list,$top/libz_a_release_unexported.txt" \
+                LDFLAGS="$opts -Wl,-headerpad_max_install_names -L$stage/packages/lib/release -Wl,-unexported_symbols_list,$stage/packages/lib/release/libz_darwin.exp" \
                 ./configure --with-pic \
                 --prefix="$stage" --libdir="$stage"/lib/release/
             make

@@ -131,8 +131,8 @@
     built dylibs but we don't have a convenient link argument to
     implement it.  So two symbol list files were manually created from
     the debug and release libz.a files and these are handed off to the
-    -unexported_symbols_list option to the linker.  If libz changes,
-    these files, in the top directory, need to be re-examined.
+    -unexported_symbols_list option to the linker.  These files are
+    now supplied by the Darwin zlib package (libz_darwin.exp).
 
     The above is mostly an exercise in how to do this on Mac.  We'll
     use static libraries for now.  Easier packaging and that's the
