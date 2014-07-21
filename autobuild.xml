@@ -3,8 +3,72 @@
 <map>
     <key>installables</key>
     <map>
+      <key>bzip2</key>
+      <map>
+        <key>copyright</key>
+        <string>Copyright (C) 1996-2010 Julian Seward &lt;jseward@bzip.org&gt;</string>
+        <key>description</key>
+        <string>bzip2 is a freely available, patent free high-quality data compressor</string>
+        <key>license</key>
+        <string>BSD</string>
+        <key>license_file</key>
+        <string>LICENSES/bzip2.txt</string>
+        <key>name</key>
+        <string>bzip2</string>
+        <key>platforms</key>
+        <map>
+          <key>darwin</key>
+          <map>
+            <key>archive</key>
+            <map>
+              <key>hash</key>
+              <string>b5ff3324c914cc270c2c3be4fa8b13a4</string>
+              <key>url</key>
+              <string>http://bitbucket.org/alchemyviewer/publiclibs-darwin/downloads/bzip2-1.0.6-darwin-201407202220.tar.bz2</string>
+            </map>
+            <key>name</key>
+            <string>darwin</string>
+          </map>
+        </map>
+        <key>version</key>
+        <string>1.0.6</string>
+      </map>
+      <key>libpng</key>
+      <map>
+        <key>copyright</key>
+        <string>Copyright (c) 2004, 2006-2013 Glenn Randers-Pehrson</string>
+        <key>description</key>
+        <string>PNG Reference library</string>
+        <key>license</key>
+        <string>libpng</string>
+        <key>license_file</key>
+        <string>LICENSES/libpng.txt</string>
+        <key>name</key>
+        <string>libpng</string>
+        <key>platforms</key>
+        <map>
+          <key>darwin</key>
+          <map>
+            <key>archive</key>
+            <map>
+              <key>hash</key>
+              <string>aa340f7b418db8db779119e19911d1e6</string>
+              <key>url</key>
+              <string>http://bitbucket.org/alchemyviewer/publiclibs-darwin/downloads/libpng-1.6.8-darwin-201407200944.tar.bz2</string>
+            </map>
+            <key>name</key>
+            <string>darwin</string>
+          </map>
+        </map>
+        <key>version</key>
+        <string>1.6.8</string>
+      </map>
       <key>zlib</key>
       <map>
+        <key>copyright</key>
+        <string>Copyright (C) 1995-2013 Jean-loup Gailly and Mark Adler</string>
+        <key>description</key>
+        <string>Zlib Data Compression Library</string>
         <key>license</key>
         <string>zlib</string>
         <key>license_file</key>
@@ -18,9 +82,9 @@
             <key>archive</key>
             <map>
               <key>hash</key>
-              <string>6658071e3b54b1dd5f5279227aff402a</string>
+              <string>def7c8a96c80d7b695c58d94036548e4</string>
               <key>url</key>
-              <string>http://automated-builds-secondlife-com.s3.amazonaws.com/hg/repo/3pl_3p-zlib-update/rev/290556/arch/Darwin/installer/zlib-1.2.8-darwin-20140602.tar.bz2</string>
+              <string>http://bitbucket.org/alchemyviewer/publiclibs-darwin/downloads/zlib-1.2.8-darwin-201407200800.tar.bz2</string>
             </map>
             <key>name</key>
             <string>darwin</string>
@@ -62,6 +126,8 @@
             <string>windows64</string>
           </map>
         </map>
+        <key>version</key>
+        <string>1.2.8</string>
       </map>
     </map>
     <key>package_description</key>
@@ -206,7 +272,7 @@
         </map>
       </map>
       <key>version</key>
-      <string>2.4.4</string>
+      <string>2.5.3</string>
     </map>
     <key>type</key>
     <string>autobuild</string>
