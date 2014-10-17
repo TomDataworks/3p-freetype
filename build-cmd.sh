@@ -91,7 +91,7 @@ pushd "$FREETYPELIB_SOURCE_DIR"
                 ZLIB_LIBS="${stage}/packages/lib/debug/libz.a" LIBPNG_LIBS="${stage}/packages/lib/debug/libpng.a" BZIP2_LIBS="${stage}/packages/lib/libbz2.a" \
 				./configure --with-pic \
 				--with-png --with-zlib --with-bzip2 --without-harfbuzz \
-               --enable-shared=no --enable-static=yes --prefix="$stage" --libdir="$stage/lib/debug"
+               --enable-shared=yes --enable-static=no --prefix="$stage" --libdir="$stage/lib/debug"
             make
             make install
 
@@ -100,18 +100,21 @@ pushd "$FREETYPELIB_SOURCE_DIR"
                 # make test
                 echo "No tests"
             fi
+
+            install_name_tool -id "@executable_path/../Resources/libfreetype.6.dylib" "$stage"/lib/debug/libfreetype.6.dylib
 
             make distclean
 
             # Release last
-            CFLAGS="$opts -gdwarf-2 -O2" \
+            CFLAGS="$opts -gdwarf-2 -Os" \
+                CXX_FLAGS="$opts -gdwarf-2 -Os" \
                 CPPFLAGS="-I$stage/packages/include/zlib -I/$stage/packages/include/bzip2 -I$stage/packages/include/libpng16" \
                 LDFLAGS="$opts -Wl,-headerpad_max_install_names -L$stage/packages/lib/debug -Wl,-unexported_symbols_list,$stage/packages/lib/debug/libz_darwin.exp" \
-                ZLIB_LIBS="${stage}/packages/lib/debug/libz.a" LIBPNG_LIBS="${stage}/packages/lib/debug/libpng.a" BZIP2_LIBS="${stage}/packages/lib/libbz2.a" \
+                ZLIB_LIBS="${stage}/packages/lib/release/libz.a" LIBPNG_LIBS="${stage}/packages/lib/release/libpng.a" BZIP2_LIBS="${stage}/packages/lib/libbz2.a" \
 				ZLIB_CFLAGS="" BZIP2_CFLAGS="" LIBPNG_CFLAGS="" \
 				./configure --with-pic \
 				--with-png --with-zlib --with-bzip2 --without-harfbuzz \
-               --enable-shared=no --enable-static=yes --prefix="$stage" --libdir="$stage/lib/release"
+               --enable-shared=yes --enable-static=no --prefix="$stage" --libdir="$stage/lib/release"
             make
             make install
 
@@ -120,6 +123,8 @@ pushd "$FREETYPELIB_SOURCE_DIR"
                 # make test
                 echo "No tests"
             fi
+
+            install_name_tool -id "@executable_path/../Resources/libfreetype.6.dylib" "$stage"/lib/release/libfreetype.6.dylib
 
             make distclean
         ;;
