@@ -101,6 +101,18 @@
             <key>name</key>
             <string>linux</string>
           </map>
+          <key>linux64</key>
+          <map>
+            <key>archive</key>
+            <map>
+              <key>hash</key>
+              <string>34f49ffedc5ee34ceb1f10767d9f69b5</string>
+              <key>url</key>
+              <string>https://bitbucket.org/alchemyviewer/publiclibs-linux/downloads/zlib-1.2.8-linux64-20141125.tar.bz2</string>
+            </map>
+            <key>name</key>
+            <string>linux64</string>
+          </map>
           <key>windows</key>
           <map>
             <key>archive</key>
@@ -223,6 +235,31 @@
           </array>
           <key>name</key>
           <string>linux</string>
+        </map>
+        <key>linux64</key>
+        <map>
+          <key>configurations</key>
+          <map>
+            <key>default</key>
+            <map>
+              <key>build</key>
+              <map>
+              </map>
+              <key>default</key>
+              <string>true</string>
+              <key>name</key>
+              <string>default</string>
+            </map>
+          </map>
+          <key>manifest</key>
+          <array>
+            <string>lib/debug/lib*.a</string>
+            <string>lib/debug/lib*.so*</string>
+            <string>lib/release/lib*.a</string>
+            <string>lib/release/lib*.so*</string>
+          </array>
+          <key>name</key>
+          <string>linux64</string>
         </map>
         <key>windows</key>
         <map>
