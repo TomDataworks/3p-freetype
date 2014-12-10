@@ -239,12 +239,12 @@ pushd "$FREETYPELIB_SOURCE_DIR"
             # Debug first
             CFLAGS="$opts -g -Og" \
                 CXXFLAGS="$opts -g -Og" \
-                LDFLAGS="$opts" \
+                LDFLAGS="$opts -Wl,--exclude-libs,ALL" \
                 PKG_CONFIG_LIBDIR="$stage/packages/lib/debug/pkgconfig"\
                 ./configure --with-pic --with-png --with-zlib \
                 --prefix="${stage}" --libdir="${stage}/lib/debug" --includedir="${stage}/include"
             make
-            make install DESTDIR="$stage"
+            make install
 
             # conditionally run unit tests
             if [ "${DISABLE_UNIT_TESTS:-0}" = "0" ]; then
@@ -257,12 +257,12 @@ pushd "$FREETYPELIB_SOURCE_DIR"
             # Release last
             CFLAGS="$opts -g -O2" \
                 CXXFLAGS="$opts -g -O2" \
-                LDFLAGS="$opts" \
+                LDFLAGS="$opts -Wl,--exclude-libs,ALL" \
                 PKG_CONFIG_LIBDIR="$stage/packages/lib/release/pkgconfig"\
                 ./configure --with-pic --with-png --with-zlib \
                 --prefix="${stage}" --libdir="${stage}/lib/release" --includedir="${stage}/include"
             make
-            make install DESTDIR="$stage"
+            make install
 
             # conditionally run unit tests
             if [ "${DISABLE_UNIT_TESTS:-0}" = "0" ]; then

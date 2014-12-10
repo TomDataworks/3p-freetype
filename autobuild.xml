@@ -265,8 +265,10 @@
           </map>
           <key>manifest</key>
           <array>
+            <string>lib/debug/pkgconfig/*.pc</string>
             <string>lib/debug/lib*.a</string>
             <string>lib/debug/lib*.so*</string>
+            <string>lib/release/pkgconfig/*.pc</string>
             <string>lib/release/lib*.a</string>
             <string>lib/release/lib*.so*</string>
           </array>
