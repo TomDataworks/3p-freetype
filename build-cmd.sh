@@ -234,15 +234,17 @@ pushd "$FREETYPELIB_SOURCE_DIR"
                 export CPPFLAGS="$TARGET_CPPFLAGS" 
             fi
 
+            fix_pkgconfig_prefix "$stage/packages"
+
             # Debug first
             CFLAGS="$opts -g -Og" \
                 CXXFLAGS="$opts -g -Og" \
-                CPPFLAGS="-I$stage/packages/include/zlib" \
-                LDFLAGS="$opts -L$stage/packages/lib/debug -Wl,--exclude-libs,libz" \
-                ./configure --with-pic --with-zlib \
-                --prefix="$stage" --libdir="$stage"/lib/debug/
+                LDFLAGS="$opts" \
+                PKG_CONFIG_LIBDIR="$stage/packages/lib/debug/pkgconfig"\
+                ./configure --with-pic --with-png --with-zlib \
+                --prefix="${stage}" --libdir="${stage}/lib/debug" --includedir="${stage}/include"
             make
-            make install
+            make install DESTDIR="$stage"
 
             # conditionally run unit tests
             if [ "${DISABLE_UNIT_TESTS:-0}" = "0" ]; then
@@ -255,12 +257,12 @@ pushd "$FREETYPELIB_SOURCE_DIR"
             # Release last
             CFLAGS="$opts -g -O2" \
                 CXXFLAGS="$opts -g -O2" \
-                CPPFLAGS="-I$stage/packages/include/zlib" \
-                LDFLAGS="$opts -L$stage/packages/lib/release -Wl,--exclude-libs,libz" \
-                ./configure --with-pic --with-zlib \
-                --prefix="$stage" --libdir="$stage"/lib/release/
+                LDFLAGS="$opts" \
+                PKG_CONFIG_LIBDIR="$stage/packages/lib/release/pkgconfig"\
+                ./configure --with-pic --with-png --with-zlib \
+                --prefix="${stage}" --libdir="${stage}/lib/release" --includedir="${stage}/include"
             make
-            make install
+            make install DESTDIR="$stage"
 
             # conditionally run unit tests
             if [ "${DISABLE_UNIT_TESTS:-0}" = "0" ]; then

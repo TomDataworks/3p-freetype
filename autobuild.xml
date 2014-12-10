@@ -59,6 +59,18 @@
             <key>name</key>
             <string>darwin</string>
           </map>
+          <key>linux64</key>
+          <map>
+            <key>archive</key>
+            <map>
+              <key>hash</key>
+              <string>271945e44a1a35c4aba218ec8c9c9cf2</string>
+              <key>url</key>
+              <string>http://depot.alchemyviewer.org/pub/linux/lib/libpng-1.6.13-linux64-20141209.tar.bz2</string>
+            </map>
+            <key>name</key>
+            <string>linux64</string>
+          </map>
         </map>
         <key>version</key>
         <string>1.6.13</string>
@@ -106,9 +118,9 @@
             <key>archive</key>
             <map>
               <key>hash</key>
-              <string>34f49ffedc5ee34ceb1f10767d9f69b5</string>
+              <string>23967544a78df78fcf3a69a30fee33a8</string>
               <key>url</key>
-              <string>https://bitbucket.org/alchemyviewer/publiclibs-linux/downloads/zlib-1.2.8-linux64-20141125.tar.bz2</string>
+              <string>http://depot.alchemyviewer.org/pub/linux/lib/zlib-1.2.8-linux64-20141209.tar.bz2</string>
             </map>
             <key>name</key>
             <string>linux64</string>
