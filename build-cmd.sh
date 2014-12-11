@@ -239,9 +239,9 @@ pushd "$FREETYPELIB_SOURCE_DIR"
             # Debug first
             CFLAGS="$opts -g -Og" \
                 CXXFLAGS="$opts -g -Og" \
-                LDFLAGS="$opts -Wl,--exclude-libs,libz:libpng16" \
+                LDFLAGS="$opts -Wl,--exclude-libs,libz" \
                 PKG_CONFIG_LIBDIR="$stage/packages/lib/debug/pkgconfig"\
-                ./configure --with-pic --with-png --with-zlib \
+                ./configure --with-pic --without-png --with-zlib \
                 --prefix="${stage}" --libdir="${stage}/lib/debug" --includedir="${stage}/include"
             make
             make install
@@ -257,9 +257,9 @@ pushd "$FREETYPELIB_SOURCE_DIR"
             # Release last
             CFLAGS="$opts -g -O2" \
                 CXXFLAGS="$opts -g -O2" \
-                LDFLAGS="$opts -Wl,--exclude-libs,libz:libpng16" \
+                LDFLAGS="$opts -Wl,--exclude-libs,libz" \
                 PKG_CONFIG_LIBDIR="$stage/packages/lib/release/pkgconfig"\
-                ./configure --with-pic --with-png --with-zlib \
+                ./configure --with-pic --without-png --with-zlib \
                 --prefix="${stage}" --libdir="${stage}/lib/release" --includedir="${stage}/include"
             make
             make install

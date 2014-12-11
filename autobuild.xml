@@ -59,18 +59,6 @@
             <key>name</key>
             <string>darwin</string>
           </map>
-          <key>linux64</key>
-          <map>
-            <key>archive</key>
-            <map>
-              <key>hash</key>
-              <string>271945e44a1a35c4aba218ec8c9c9cf2</string>
-              <key>url</key>
-              <string>http://depot.alchemyviewer.org/pub/linux/lib/libpng-1.6.13-linux64-20141209.tar.bz2</string>
-            </map>
-            <key>name</key>
-            <string>linux64</string>
-          </map>
         </map>
         <key>version</key>
         <string>1.6.13</string>
