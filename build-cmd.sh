@@ -8,6 +8,7 @@ set -x
 set -e
 
 FREETYPELIB_SOURCE_DIR="freetype"
+FREETYPE_VERSION="2.5.4"
 
 if [ -z "$AUTOBUILD" ] ; then 
     fail
@@ -27,6 +28,8 @@ stage="$(pwd)/stage"
 
 [ -f "$stage"/packages/include/zlib/zlib.h ] || fail "You haven't installed packages yet."
 
+echo "${FREETYPE_VERSION}" > "${stage}/VERSION.txt"
+
 pushd "$FREETYPELIB_SOURCE_DIR"
     case "$AUTOBUILD_PLATFORM" in
 
@@ -38,8 +41,8 @@ pushd "$FREETYPELIB_SOURCE_DIR"
 
             mkdir -p "$stage/lib/debug"
             mkdir -p "$stage/lib/release"
-            cp -a "objs/win32/vc2013/freetype253_D.lib" "$stage/lib/debug/freetype.lib"
-            cp -a "objs/win32/vc2013/freetype253.lib" "$stage/lib/release/freetype.lib"
+            cp -a "objs/win32/vc2013/freetype254d.lib" "$stage/lib/debug/freetype.lib"
+            cp -a "objs/win32/vc2013/freetype254.lib" "$stage/lib/release/freetype.lib"
                 
             mkdir -p "$stage/include/freetype2/"
             cp -a include/*.h "$stage/include/freetype2/"
@@ -54,8 +57,8 @@ pushd "$FREETYPELIB_SOURCE_DIR"
 
             mkdir -p "$stage/lib/debug"
             mkdir -p "$stage/lib/release"
-            cp -a "objs/win64/vc2013/freetype253_D.lib" "$stage/lib/debug/freetype.lib"
-            cp -a "objs/win64/vc2013/freetype253.lib" "$stage/lib/release/freetype.lib"
+            cp -a "objs/vc2013/x64/freetype254d.lib" "$stage/lib/debug/freetype.lib"
+            cp -a "objs/vc2013/x64/freetype254.lib" "$stage/lib/release/freetype.lib"
                 
             mkdir -p "$stage/include/freetype2/"
             cp -a include/*.h "$stage/include/freetype2/"
