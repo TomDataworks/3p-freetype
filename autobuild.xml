@@ -182,7 +182,6 @@
           </map>
           <key>manifest</key>
           <array>
-            <string>include/ft2build.h</string>
             <string>include/freetype2/*</string>
             <string>LICENSES/freetype.txt</string>
             <string>docs/freetype/README.Linden</string>
