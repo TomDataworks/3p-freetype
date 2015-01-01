@@ -6,7 +6,7 @@
       <key>bzip2</key>
       <map>
         <key>copyright</key>
-        <string>Copyright (C) 1996-2010 Julian Seward &lt;jseward@bzip.org&gt;</string>
+        <string>Copyright (C) 1996-2010 Julian Seward &amp;lt;jseward@bzip.org&amp;gt;</string>
         <key>description</key>
         <string>bzip2 is a freely available, patent free high-quality data compressor</string>
         <key>license</key>
@@ -22,9 +22,11 @@
             <key>archive</key>
             <map>
               <key>hash</key>
-              <string>b5ff3324c914cc270c2c3be4fa8b13a4</string>
+              <string>d2273e4cadf7f427408bccbd87ea0e46</string>
+              <key>hash_algorithm</key>
+              <string>md5</string>
               <key>url</key>
-              <string>http://bitbucket.org/alchemyviewer/publiclibs-darwin/downloads/bzip2-1.0.6-darwin-201407202220.tar.bz2</string>
+              <string>https://bitbucket.org/alchemyviewer/publiclibs-darwin2/downloads/bzip2-1.0.6-darwin-201501011131.tar.bz2</string>
             </map>
             <key>name</key>
             <string>darwin</string>
@@ -36,7 +38,7 @@
       <key>libpng</key>
       <map>
         <key>copyright</key>
-        <string>Copyright (c) 2004, 2006-2013 Glenn Randers-Pehrson</string>
+        <string>Copyright (c) 2004, 2006-2014 Glenn Randers-Pehrson</string>
         <key>description</key>
         <string>PNG Reference library</string>
         <key>license</key>
@@ -52,16 +54,18 @@
             <key>archive</key>
             <map>
               <key>hash</key>
-              <string>52989865f3d7f65f36f837d17b50fcd9</string>
+              <string>d56364c67f71e8a8b88ba45c30c7fa93</string>
+              <key>hash_algorithm</key>
+              <string>md5</string>
               <key>url</key>
-              <string>https://bitbucket.org/alchemyviewer/publiclibs-darwin/downloads/libpng-1.6.13-darwin-201410161444.tar.bz2</string>
+              <string>https://bitbucket.org/alchemyviewer/publiclibs-darwin2/downloads/libpng-1.6.15-darwin-201501011200.tar.bz2</string>
             </map>
             <key>name</key>
             <string>darwin</string>
           </map>
         </map>
         <key>version</key>
-        <string>1.6.13</string>
+        <string>1.6.15</string>
       </map>
       <key>zlib</key>
       <map>
@@ -82,9 +86,11 @@
             <key>archive</key>
             <map>
               <key>hash</key>
-              <string>42e0fb92dd26bdd7700460ba87848668</string>
+              <string>1a740545afddb5b037640efacf9e8088</string>
+              <key>hash_algorithm</key>
+              <string>md5</string>
               <key>url</key>
-              <string>http://bitbucket.org/alchemyviewer/publiclibs-darwin/downloads/zlib-1.2.8-darwin-201407231142.tar.bz2</string>
+              <string>https://bitbucket.org/alchemyviewer/publiclibs-darwin2/downloads/zlib-1.2.8-darwin-201501011110.tar.bz2</string>
             </map>
             <key>name</key>
             <string>darwin</string>
