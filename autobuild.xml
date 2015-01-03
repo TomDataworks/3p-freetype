@@ -112,9 +112,11 @@
             <key>archive</key>
             <map>
               <key>hash</key>
-              <string>23967544a78df78fcf3a69a30fee33a8</string>
+              <string>7e02ce63286a14c28e410fd399e7a748</string>
+              <key>hash_algorithm</key>
+              <string>md5</string>
               <key>url</key>
-              <string>http://depot.alchemyviewer.org/pub/linux/lib/zlib-1.2.8-linux64-20141209.tar.bz2</string>
+              <string>http://depot.alchemyviewer.org/pub/linux64/lib/zlib-1.2.8-linux64-201501030147.tar.bz2</string>
             </map>
             <key>name</key>
             <string>linux64</string>
