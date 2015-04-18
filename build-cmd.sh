@@ -148,10 +148,10 @@ pushd "$FREETYPELIB_SOURCE_DIR"
             #
             # unset DISTCC_HOSTS CC CXX CFLAGS CPPFLAGS CXXFLAGS
 
-            # Prefer gcc-4.6 if available.
-            if [ -x /usr/bin/gcc-4.6 -a -x /usr/bin/g++-4.6 ]; then
-                export CC=/usr/bin/gcc-4.6
-                export CXX=/usr/bin/g++-4.6
+            # Prefer gcc-4.8 if available.
+            if [ -x /usr/bin/gcc-4.8 -a -x /usr/bin/g++-4.8 ]; then
+                export CC=/usr/bin/gcc-4.8
+                export CXX=/usr/bin/g++-4.8
             fi
 
             # Default target to 32-bit
@@ -227,6 +227,8 @@ pushd "$FREETYPELIB_SOURCE_DIR"
 
             # Default target to 64-bit
             opts="${TARGET_OPTS:--m64}"
+            JOBS=`cat /proc/cpuinfo | grep processor | wc -l`
+            HARDENED="-fstack-protector-strong -D_FORTIFY_SOURCE=2"
 
             # Handle any deliberate platform targeting
             if [ -z "$TARGET_CPPFLAGS" ]; then
@@ -240,14 +242,16 @@ pushd "$FREETYPELIB_SOURCE_DIR"
             fix_pkgconfig_prefix "$stage/packages"
 
             # Debug first
-            CFLAGS="$opts -g -Og" \
-                CXXFLAGS="$opts -g -Og" \
+            CFLAGS="$opts -Og -g" \
+                CXXFLAGS="$opts -Og -g" \
                 LDFLAGS="$opts -Wl,--exclude-libs,libz" \
                 PKG_CONFIG_LIBDIR="$stage/packages/lib/debug/pkgconfig"\
                 ./configure --with-pic --without-png --with-zlib \
                 --prefix="${stage}" --libdir="${stage}/lib/debug" --includedir="${stage}/include"
-            make
+            make -j$JOBS
             make install
+
+            cp ../extras/freetype2-debug.pc ${stage}/lib/debug/pkgconfig/freetype2.pc
 
             # conditionally run unit tests
             if [ "${DISABLE_UNIT_TESTS:-0}" = "0" ]; then
@@ -258,14 +262,16 @@ pushd "$FREETYPELIB_SOURCE_DIR"
             make distclean
 
             # Release last
-            CFLAGS="$opts -g -O2" \
-                CXXFLAGS="$opts -g -O2" \
+            CFLAGS="$opts -O2 -g $HARDENED" \
+                CXXFLAGS="$opts -O2 -g $HARDENED" \
                 LDFLAGS="$opts -Wl,--exclude-libs,libz" \
                 PKG_CONFIG_LIBDIR="$stage/packages/lib/release/pkgconfig"\
                 ./configure --with-pic --without-png --with-zlib \
                 --prefix="${stage}" --libdir="${stage}/lib/release" --includedir="${stage}/include"
-            make
+            make -j$JOBS
             make install
+
+            cp ../extras/freetype2.pc ${stage}/lib/release/pkgconfig/freetype2.pc
 
             # conditionally run unit tests
             if [ "${DISABLE_UNIT_TESTS:-0}" = "0" ]; then
