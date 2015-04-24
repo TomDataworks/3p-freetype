@@ -90,10 +90,10 @@ pushd "$FREETYPELIB_SOURCE_DIR"
                 CXXFLAGS="$opts -gdwarf-2 -O0" \
                 CPPFLAGS="-I$stage/packages/include/zlib -I/$stage/packages/include/bzip2 -I$stage/packages/include/libpng16" \
                 LDFLAGS="$opts -Wl,-headerpad_max_install_names -L$stage/packages/lib/debug -Wl,-unexported_symbols_list,$stage/packages/lib/debug/libz_darwin.exp" \
-				ZLIB_CFLAGS="" LIBPNG_CFLAGS="" BZIP2_CFLAGS="" \
-                ZLIB_LIBS="${stage}/packages/lib/debug/libz.a" LIBPNG_LIBS="${stage}/packages/lib/debug/libpng.a" BZIP2_LIBS="${stage}/packages/lib/libbz2.a" \
+				ZLIB_CFLAGS="" LIBPNG_CFLAGS="" \
+                ZLIB_LIBS="${stage}/packages/lib/debug/libz.a" LIBPNG_LIBS="${stage}/packages/lib/debug/libpng.a" \
 				./configure --with-pic \
-				--with-png --with-zlib --with-bzip2 --without-harfbuzz \
+				--with-png --with-zlib --without-harfbuzz \
                --enable-shared=yes --enable-static=no --prefix="$stage" --libdir="$stage/lib/debug"
             make
             make install
