@@ -94,9 +94,11 @@
             <key>archive</key>
             <map>
               <key>hash</key>
-              <string>9b4f4d1324aabd722e6a01e748d151cd</string>
+              <string>180ccbbf9c262a823fb5ad1d1917767d</string>
+              <key>hash_algorithm</key>
+              <string>md5</string>
               <key>url</key>
-              <string>https://bitbucket.org/alchemyviewer/publiclibs-vs12/downloads/zlib-1.2.8-windows-vs12-20140705.tar.bz2</string>
+              <string>http://depot.alchemyviewer.org/pub/windows/lib/zlib-1.2.8-windows-201504262238.tar.bz2</string>
             </map>
             <key>name</key>
             <string>windows</string>
@@ -106,11 +108,11 @@
             <key>archive</key>
             <map>
               <key>hash</key>
-              <string>5b42d6cba346aa0a9fd5055b5eff2cb7</string>
+              <string>02bc24f2b25e440f02ddd46b7e9c99cc</string>
               <key>hash_algorithm</key>
               <string>md5</string>
               <key>url</key>
-              <string>http://depot.alchemyviewer.org/pub/windows/lib/zlib-1.2.8-windows64-201501010307.tar.bz2</string>
+              <string>http://depot.alchemyviewer.org/pub/windows64/lib/zlib-1.2.8-windows64-201504262233.tar.bz2</string>
             </map>
             <key>name</key>
             <string>windows64</string>
