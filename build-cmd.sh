@@ -41,8 +41,8 @@ pushd "$FREETYPELIB_SOURCE_DIR"
 
             mkdir -p "$stage/lib/debug"
             mkdir -p "$stage/lib/release"
-            cp -a "objs/vc2013/win32/freetype255d.lib" "$stage/lib/debug/freetype.lib"
-            cp -a "objs/vc2013/win32/freetype255.lib" "$stage/lib/release/freetype.lib"
+            cp -a "objs/vc2013/win32/freetype26d.lib" "$stage/lib/debug/freetype.lib"
+            cp -a "objs/vc2013/win32/freetype26.lib" "$stage/lib/release/freetype.lib"
                 
             mkdir -p "$stage/include/freetype2/"
             cp -a include/*.h "$stage/include/freetype2/"
@@ -57,8 +57,8 @@ pushd "$FREETYPELIB_SOURCE_DIR"
 
             mkdir -p "$stage/lib/debug"
             mkdir -p "$stage/lib/release"
-            cp -a "objs/vc2013/x64/freetype255d.lib" "$stage/lib/debug/freetype.lib"
-            cp -a "objs/vc2013/x64/freetype255.lib" "$stage/lib/release/freetype.lib"
+            cp -a "objs/vc2013/x64/freetype26d.lib" "$stage/lib/debug/freetype.lib"
+            cp -a "objs/vc2013/x64/freetype26.lib" "$stage/lib/release/freetype.lib"
                 
             mkdir -p "$stage/include/freetype2/"
             cp -a include/*.h "$stage/include/freetype2/"
