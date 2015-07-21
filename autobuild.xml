@@ -125,7 +125,7 @@
     <key>package_description</key>
     <map>
       <key>copyright</key>
-      <string>Copyright 2006-2014 by David Turner, Robert Wilhelm, and Werner Lemberg.</string>
+      <string>Copyright 2006-2015 by David Turner, Robert Wilhelm, and Werner Lemberg.</string>
       <key>description</key>
       <string>Font rendering library</string>
       <key>license</key>

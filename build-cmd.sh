@@ -8,7 +8,7 @@ set -x
 set -e
 
 FREETYPELIB_SOURCE_DIR="freetype"
-FREETYPE_VERSION="2.5.5"
+FREETYPE_VERSION="2.6.0"
 
 if [ -z "$AUTOBUILD" ] ; then 
     fail
