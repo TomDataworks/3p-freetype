@@ -36,13 +36,13 @@ pushd "$FREETYPELIB_SOURCE_DIR"
         "windows")
             load_vsvars
             
-            build_sln "builds/windows/vc2013/freetype.sln" "Debug|Win32" 
-            build_sln "builds/windows/vc2013/freetype.sln" "Release|Win32" 
+            build_sln "builds/windows/vc2015/freetype.sln" "Debug|Win32" 
+            build_sln "builds/windows/vc2015/freetype.sln" "Release|Win32" 
 
             mkdir -p "$stage/lib/debug"
             mkdir -p "$stage/lib/release"
-            cp -a "objs/vc2013/win32/freetype26d.lib" "$stage/lib/debug/freetype.lib"
-            cp -a "objs/vc2013/win32/freetype26.lib" "$stage/lib/release/freetype.lib"
+            cp -a "objs/vc2015/win32/freetype26d.lib" "$stage/lib/debug/freetype.lib"
+            cp -a "objs/vc2015/win32/freetype26.lib" "$stage/lib/release/freetype.lib"
                 
             mkdir -p "$stage/include/freetype2/"
             cp -a include/*.h "$stage/include/freetype2/"
@@ -52,13 +52,13 @@ pushd "$FREETYPELIB_SOURCE_DIR"
         "windows64")
             load_vsvars
             
-            build_sln "builds/windows/vc2013/freetype.sln" "Debug|x64" 
-            build_sln "builds/windows/vc2013/freetype.sln" "Release|x64" 
+            build_sln "builds/windows/vc2015/freetype.sln" "Debug|x64" 
+            build_sln "builds/windows/vc2015/freetype.sln" "Release|x64" 
 
             mkdir -p "$stage/lib/debug"
             mkdir -p "$stage/lib/release"
-            cp -a "objs/vc2013/x64/freetype26d.lib" "$stage/lib/debug/freetype.lib"
-            cp -a "objs/vc2013/x64/freetype26.lib" "$stage/lib/release/freetype.lib"
+            cp -a "objs/vc2015/x64/freetype26d.lib" "$stage/lib/debug/freetype.lib"
+            cp -a "objs/vc2015/x64/freetype26.lib" "$stage/lib/release/freetype.lib"
                 
             mkdir -p "$stage/include/freetype2/"
             cp -a include/*.h "$stage/include/freetype2/"
