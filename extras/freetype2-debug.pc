@@ -6,7 +6,7 @@ includedir=${prefix}/include/freetype2
 Name: FreeType 2
 URL: http://freetype.org
 Description: A free, high-quality, and portable font engine.
-Version: 17.4.11
+Version: 18.0.12
 Requires:
 Requires.private: zlib
 Libs: -L${libdir} -lfreetype
