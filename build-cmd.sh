@@ -36,8 +36,8 @@ pushd "$FREETYPELIB_SOURCE_DIR"
         "windows")
             load_vsvars
             
-            build_sln "builds/windows/vc2015/freetype.sln" "Debug|Win32" 
-            build_sln "builds/windows/vc2015/freetype.sln" "Release|Win32" 
+            build_sln "builds/windows/vc2015/freetype.sln" "Debug" "Win32" 
+            build_sln "builds/windows/vc2015/freetype.sln" "Release" "Win32" 
 
             mkdir -p "$stage/lib/debug"
             mkdir -p "$stage/lib/release"
@@ -52,8 +52,8 @@ pushd "$FREETYPELIB_SOURCE_DIR"
         "windows64")
             load_vsvars
             
-            build_sln "builds/windows/vc2015/freetype.sln" "Debug|x64" 
-            build_sln "builds/windows/vc2015/freetype.sln" "Release|x64" 
+            build_sln "builds/windows/vc2015/freetype.sln" "Debug" "x64" 
+            build_sln "builds/windows/vc2015/freetype.sln" "Release" "x64" 
 
             mkdir -p "$stage/lib/debug"
             mkdir -p "$stage/lib/release"
