@@ -186,6 +186,9 @@ FT_BEGIN_HEADER
   /*                                                                       */
 /* #define FT_CONFIG_OPTION_SYSTEM_ZLIB */
 
+#if _WIN32
+#define FT_CONFIG_OPTION_SYSTEM_ZLIB
+#endif
 
   /*************************************************************************/
   /*                                                                       */

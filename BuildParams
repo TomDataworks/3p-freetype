@@ -1,0 +1,7 @@
+# Use Public Upload Locations
+public_build = true
+
+# autobuild uses VS2010
+AUTOBUILD_VSVER=100
+
+USE_INCREDIBUILD=0

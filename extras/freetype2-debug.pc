@@ -1,0 +1,14 @@
+prefix=${AUTOBUILD_PACKAGES_DIR}
+exec_prefix=${prefix}
+libdir=${prefix}/lib/debug
+includedir=${prefix}/include/freetype2
+
+Name: FreeType 2
+URL: http://freetype.org
+Description: A free, high-quality, and portable font engine.
+Version: 18.0.12
+Requires:
+Requires.private: zlib
+Libs: -L${libdir} -lfreetype
+Libs.private: 
+Cflags: -I${includedir}
