@@ -22,18 +22,18 @@
             <key>archive</key>
             <map>
               <key>hash</key>
-              <string>2833067b23868e28f0015cef9668ebed</string>
+              <string>7c315d3fee9f9bf7e36c4251c41fa378</string>
               <key>hash_algorithm</key>
               <string>md5</string>
               <key>url</key>
-              <string>https://bitbucket.org/alchemyviewer/publiclibs-darwin/downloads/libpng-1.6.17-darwin-201504232231.tar.bz2</string>
+              <string>https://bitbucket.org/alchemyviewer/publiclibs-darwin/downloads/libpng-1.6.19-darwin-201511222146.tar.bz2</string>
             </map>
             <key>name</key>
             <string>darwin</string>
           </map>
         </map>
         <key>version</key>
-        <string>1.6.17</string>
+        <string>1.6.19</string>
       </map>
       <key>zlib</key>
       <map>
@@ -54,11 +54,11 @@
             <key>archive</key>
             <map>
               <key>hash</key>
-              <string>cbee0492c983eebf68fc4f813fc26b93</string>
+              <string>635ee875ba478b17b6c64d9698cdf0dd</string>
               <key>hash_algorithm</key>
               <string>md5</string>
               <key>url</key>
-              <string>https://bitbucket.org/alchemyviewer/publiclibs-darwin/downloads/zlib-1.2.8-darwin-201504231927.tar.bz2</string>
+              <string>https://bitbucket.org/alchemyviewer/publiclibs-darwin/downloads/zlib-1.2.8-darwin-201511221937.tar.bz2</string>
             </map>
             <key>name</key>
             <string>darwin</string>
